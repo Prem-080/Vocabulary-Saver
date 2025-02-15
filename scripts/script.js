@@ -52,7 +52,7 @@ function displayWord() {
 
   const currentWord = vocabList[currentIndex];
 
-  wordEl.textContent = currentWord.word;
+  wordEl.textContent = ` Word: ${currentWord.word} `;
 
   meaningEl.textContent = `Meaning: ${currentWord.meaning}`;
 
@@ -166,62 +166,7 @@ cancelEditBtn.addEventListener("click", () => {
 
 });
 
-// View all vocabulary
-viewAllBtn.addEventListener("click", () => {
 
-  const vocabWindow = window.open("", "_blank");
-
-  vocabWindow.document.write(`
-
-    <!DOCTYPE html>
-
-    <html lang="en">
-
-    <head>
-
-      <meta charset="UTF-8">
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <title>All Vocabulary</title>
-
-      <link rel="stylesheet" href="styles.css">
-
-    </head>
-
-    <body>
-
-      <div class="all-vocab-container">
-
-        <h1>All Vocabulary</h1>
-
-        <div class="vocab-set">
-
-          ${vocabList.map(({ word, meaning, example }) => `
-
-            <div class="vocab-card">
-
-              <h3>${word}</h3>
-
-              <p><strong>Meaning:</strong> ${meaning}</p>
-
-              <p><strong>Example:</strong> ${example}</p>
-
-            </div>
-
-          `).join("")}
-
-        </div>
-
-      </div>
-
-    </body>
-
-    </html>
-
-  `);
-
-});
 
 // Initial display
 

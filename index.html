@@ -32,7 +32,7 @@
     <button id="prev-btn">Previous Word</button>
     <button id="next-btn">Next Word</button>
     <button id="edit-btn">Edit Word</button>
-    <button id="view-all-btn">View All Vocabulary</button>
+    <a href="/pages/All_Vocab.html" target="_blank"><button id="view-all-btn">View All Vocabulary</button></a>
   </div>
 
   <!-- Edit Modal -->
@@ -49,7 +49,33 @@
     </div>
   </div>
 
+  
   <script src="scripts/script.js"></script>
+
+  <!-- Firebase Services
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDbchUTQf8dD8hAIxu223yvFhLhcKM983I",
+      authDomain: "vocabulary-saver.firebaseapp.com",
+      projectId: "vocabulary-saver",
+      storageBucket: "vocabulary-saver.firebasestorage.app",
+      messagingSenderId: "639842320230",
+      appId: "1:639842320230:web:13affb8bdd0ebaa5e7d2a7",
+      measurementId: "G-0PPPHQ090F"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script> -->
 </body>
 
 </html>

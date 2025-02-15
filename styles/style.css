@@ -1,14 +1,15 @@
 /* General Styles */
-
+*{
+  box-sizing: border-box;
+}
 body {
 
   font-family: Arial, sans-serif;
-
   background-color: #f7f7f7;
-
   margin: 0;
-
   padding: 20px;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffecd2, #ee7f59);
 
 }
 
@@ -17,7 +18,7 @@ body {
   max-width: 600px;
 
   margin: auto;
-
+  /* background: linear-gradient(135deg, #e0f7fa, #80deea); */
   text-align: center;
 
 }
@@ -38,7 +39,9 @@ body {
 
 }
 
-.form input, .form textarea, button {
+.form input,
+.form textarea,
+button {
 
   padding: 10px;
 
@@ -83,6 +86,7 @@ button:hover {
   margin: 10px 0;
 
 }
+
 .modal {
   display: none;
 
@@ -132,15 +136,10 @@ button:hover {
 .modal-content input,
 .modal-content textarea {
   width: 90%;
-
   margin: 10px auto;
-
   padding: 10px;
-
   border: 1px solid #ccc;
-
   border-radius: 5px;
-
   font-size: 1em;
 }
 
@@ -165,72 +164,3 @@ textarea {
 }
 
 
-/* All Vocabulary Page */
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  margin: 0;
-  padding: 20px;
-}
-
-.all-vocab-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.all-vocab-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 2em;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.vocab-set {
-  margin: 20px 0;
-  padding: 15px;
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
-  border-radius: 15px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.vocab-set h2 {
-  margin: 0 0 15px;
-  font-size: 1.5em;
-  color: #00796b;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.vocab-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #f8bbd0, #f48fb1);
-  color: #fff;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease-in-out;
-}
-
-.vocab-card:hover {
-  transform: translateY(-5px);
-}
-
-.vocab-card h3 {
-  margin: 0 0 10px;
-  font-size: 1.3em;
-  color: #ffffff;
-}
-
-.vocab-card p {
-  margin: 5px 0;
-  font-size: 0.95em;
-}
-
-.vocab-card p strong {
-  color: #f1f8e9;
-}
