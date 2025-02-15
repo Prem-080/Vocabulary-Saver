@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocabulary Flashcards</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Vocabulary Flashcards</h1>
+
+    <!-- Add Word Form -->
+    <div class="form">
+      <h2>Add New Word</h2>
+      <input type="text" id="new-word" placeholder="Word" />
+      <input type="text" id="new-meaning" placeholder="Meaning" />
+      <input type="text" id="new-example" placeholder="Example Sentence" /><br>
+      <button id="add-btn">Add Word</button>
+    </div>
+
+    <!-- Flashcard Display -->
+    <div class="flashcard">
+      <p id="word">Word</p>
+      <p id="meaning">Meaning</p>
+      <p id="example">Example Sentence</p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prev-btn">Previous Word</button>
+    <button id="next-btn">Next Word</button>
+    <button id="edit-btn">Edit Word</button>
+    <button id="view-all-btn">View All Vocabulary</button>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <h2>Edit Word</h2>
+      <input type="text" id="edit-word" placeholder="Word" />
+      <textarea id="edit-meaning" placeholder="Meaning"></textarea>
+      <textarea id="edit-example" placeholder="Example Sentence"></textarea>
+      <div class="modal-actions">
+        <button id="save-edit-btn">Save</button>
+        <button id="cancel-edit-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
