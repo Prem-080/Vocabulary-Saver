@@ -6,33 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vocabulary Flashcards</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
+  <header>
+    <div class="navbar">
+      <div class="nav">
+        <div class="logo">
+          <img src="favicon-32x32.png" alt="">
+        </div>
+        <div class="nav-links">
+
+          <a href="pages/All_Vocab.html" target="_blank">View All Vocabulary</a>
+        </div>
+      </div>
+    </div>
+  </header>
   <div class="container">
-    <h1>Vocabulary Flashcards</h1>
 
     <!-- Add Word Form -->
     <div class="form">
       <h2>Add New Word</h2>
-      <input type="text" id="new-word" placeholder="Word" />
-      <input type="text" id="new-meaning" placeholder="Meaning" />
+      <input type="text" id="new-word" placeholder="Word" /><br>
+      <input type="text" id="new-meaning" placeholder="Meaning" /><br>
       <input type="text" id="new-example" placeholder="Example Sentence" /><br>
       <button id="add-btn">Add Word</button>
     </div>
 
     <!-- Flashcard Display -->
     <div class="flashcard">
-      <p id="word">Word</p>
-      <p id="meaning">Meaning</p>
-      <p id="example">Example Sentence</p>
+      <!-- <h1 class="poppins-medium">Vocabulary Flashcards</h1> -->
+      <p id="word" class="row"></p>
+      <p id="meaning" class="row"></p>
+      <p id="example" class="row"></p>
+      <abbr title="Edit"><button id="edit-btn"><img src="Assets/edit.svg" alt=""></button>
+      </abbr>
+      <button id="delete"><img src="Assets/delete.svg" alt=""></button>
+
+      <!-- Navigation Buttons -->
+        <button id="prev-btn"><img src="Assets/arrow_back_ios.svg" alt=""></button>
+        <button id="next-btn"><img src="Assets/arrow_forward_ios.svg" alt=""></button>
     </div>
 
-    <!-- Navigation Buttons -->
-    <button id="prev-btn">Previous Word</button>
-    <button id="next-btn">Next Word</button>
-    <button id="edit-btn">Edit Word</button>
-    <a href="/pages/All_Vocab.html" target="_blank"><button id="view-all-btn">View All Vocabulary</button></a>
+
+
+
+
   </div>
 
   <!-- Edit Modal -->
@@ -49,7 +72,7 @@
     </div>
   </div>
 
-  
+
   <script src="scripts/script.js"></script>
 
   <!-- Firebase Services

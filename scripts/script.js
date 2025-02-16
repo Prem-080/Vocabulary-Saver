@@ -46,17 +46,27 @@ function displayWord() {
 
     exampleEl.textContent = "";
 
+    editBtn.style.display= "none";
+
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+
     return;
 
   }
-
+  prevBtn.disabled = false;
+    nextBtn.disabled = false;
+  editBtn.style.display= "";
   const currentWord = vocabList[currentIndex];
 
-  wordEl.textContent = ` Word: ${currentWord.word} `;
+  wordEl.innerHTML = ` <span class="label">Word:</span> 
+  <span class="content">${currentWord.word}</span> `;
 
-  meaningEl.textContent = `Meaning: ${currentWord.meaning}`;
+  meaningEl.innerHTML = `<span class="label">Meaning:</span> 
+  <span class="content">${currentWord.meaning}</span>`;
 
-  exampleEl.textContent = `Example: ${currentWord.example}`;
+  exampleEl.innerHTML = `<span class="label">Example:</span> 
+  <span class="content">${currentWord.example}</span>`;
 
 }
 
