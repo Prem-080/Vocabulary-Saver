@@ -5,6 +5,9 @@ const vocabList = JSON.parse(localStorage.getItem("vocabList")) || [];
 let currentIndex = vocabList.length - 1;
 
 // DOM Elements
+const form = document.getElementById("form");
+
+// const input = document.querySelectorAll("input");
 
 const wordEl = document.getElementById("word");
 
@@ -72,8 +75,7 @@ function displayWord() {
 
 // Add a new word
 
-addBtn.addEventListener("click", () => {
-
+function addNewWord(){
   const newWord = document.getElementById("new-word").value.trim();
 
   const newMeaning = document.getElementById("new-meaning").value.trim();
@@ -91,8 +93,7 @@ addBtn.addEventListener("click", () => {
     document.getElementById("new-meaning").value = "";
 
     document.getElementById("new-example").value = "";
-
-    alert("Word added successfully!");
+    currentIndex++;
 
     displayWord();
 
@@ -101,8 +102,23 @@ addBtn.addEventListener("click", () => {
     alert("Please fill out all fields.");
 
   }
+}
+
+addBtn.addEventListener("click", () => {
+
+ addNewWord();
 
 });
+
+// Add event listener when form gets focus
+  form.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Prevents accidental form submission
+      addNewWord();
+    }
+  });
+
+
 
 // Navigation buttons
 
@@ -175,6 +191,42 @@ cancelEditBtn.addEventListener("click", () => {
   modal.style.display = "none";
 
 });
+
+// Select the delete button
+const deleteCurrentBtn = document.getElementById("delete");
+
+// Function to delete the current word
+function deleteCurrentWord() {
+    let vocabList = JSON.parse(localStorage.getItem("vocabList")) || [];
+
+    if (vocabList.length === 0) {
+        alert("No words to delete.");
+        return;
+    }
+
+    // Ask for confirmation before deleting
+    const confirmDelete = confirm(`Are you sure you want to delete "${vocabList[currentIndex].word}"?`);
+    if (!confirmDelete) return;
+
+    // Remove the word at currentIndex
+    vocabList.splice(currentIndex, 1);
+
+    // Update localStorage
+    localStorage.setItem("vocabList", JSON.stringify(vocabList));
+
+    // Adjust currentIndex to avoid out-of-range errors
+    if (currentIndex >= vocabList.length) {
+        currentIndex = vocabList.length - 1; // Move to last available word
+    }
+
+    // Refresh display
+    displayWord();
+}
+
+// Add event listener to the delete button
+if (deleteCurrentBtn) {
+    deleteCurrentBtn.addEventListener("click", deleteCurrentWord);
+}
 
 
 
