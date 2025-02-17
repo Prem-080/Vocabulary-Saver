@@ -194,6 +194,10 @@ cancelEditBtn.addEventListener("click", () => {
 
 // Select the delete button
 const deleteCurrentBtn = document.getElementById("delete");
+// Add event listener to the delete button
+if (deleteCurrentBtn) {
+    deleteCurrentBtn.addEventListener("click", deleteCurrentWord);
+}
 
 // Function to delete the current word
 function deleteCurrentWord() {
@@ -213,20 +217,16 @@ function deleteCurrentWord() {
 
     // Update localStorage
     localStorage.setItem("vocabList", JSON.stringify(vocabList));
-    vocabList = JSON.parse(localStorage.getItem("vocabList")) || [];
     // Adjust currentIndex to avoid out-of-range errors
     if (currentIndex >= vocabList.length) {
         currentIndex = vocabList.length - 1; // Move to last available word
     }
 
+    vocabList = JSON.parse(localStorage.getItem("vocabList")) || [];
     // Refresh display
     displayWord();
 }
 
-// Add event listener to the delete button
-if (deleteCurrentBtn) {
-    deleteCurrentBtn.addEventListener("click", deleteCurrentWord);
-}
 
 
 
