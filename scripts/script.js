@@ -58,7 +58,7 @@ function displayWord() {
 
   }
   prevBtn.disabled = false;
-    nextBtn.disabled = false;
+  nextBtn.disabled = false;
   editBtn.style.display= "";
   const currentWord = vocabList[currentIndex];
 
@@ -213,7 +213,7 @@ function deleteCurrentWord() {
 
     // Update localStorage
     localStorage.setItem("vocabList", JSON.stringify(vocabList));
-
+    vocabList = JSON.parse(localStorage.getItem("vocabList")) || [];
     // Adjust currentIndex to avoid out-of-range errors
     if (currentIndex >= vocabList.length) {
         currentIndex = vocabList.length - 1; // Move to last available word
